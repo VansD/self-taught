@@ -1,0 +1,42 @@
+.user {
+    border: 1px solid lightgray;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    min-width: 360px;
+    
+
+    &:hover {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+    &:active {
+        background-color: beige;
+    }
+
+    span {
+        margin-right: 5px;
+    }
+
+    .user_info {
+        text-align: left;
+        text-wrap: wrap;
+    }
+
+    .user_control {
+        text-align: right;
+        width: 100%;
+        text-wrap: nowrap;
+
+        svg {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+}

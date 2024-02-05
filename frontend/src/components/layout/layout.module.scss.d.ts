@@ -1,0 +1,11 @@
+export declare const app: string;
+export declare const min: string;
+export declare const header: string;
+export declare const header_content: string;
+export declare const header_content_login: string;
+export declare const content: string;
+export declare const footer: string;
+export declare const footer_content: string;
+export declare const loader: string;
+export declare const login: string;
+export declare const register: string;
