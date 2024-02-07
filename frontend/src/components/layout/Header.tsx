@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/redux";
-import { Pages } from "../../paths";
+import { Pages, Account } from "../../paths";
 import { authApi, useLogoutMutation } from "../../services/AuthService";
 import { clearUser } from "../../store/reducers/auth/AuthSlice";
 import styles from './layout.module.scss';
@@ -27,7 +27,7 @@ export const Header = () => {
             <div className={styles.header_content_login}>
                 {!_.isEmpty(user) ?
                     <>
-                        <a href={Pages.profile}>{user.lastName} {user.firstName}</a>
+                        <a href={Account.profile}>{user.lastName} {user.firstName}</a>
                         <a href="#" onClick={handleLogout}>Выйти</a>
                     </>
                     : <>

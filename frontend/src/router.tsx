@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate, useLocation } from "react-router-dom";
 import ErrorPage from "./views/Pages/Error";
 import App from "./App";
-import { Admin, Pages, Student, Teacher } from "./paths";
+import { Account, Admin, Pages, Student, Teacher } from "./paths";
 import { Layout } from "./components/layout/Layout";
 import { LayoutMin } from "./components/layout/LayoutMin";
 import React from "react";
@@ -21,6 +21,7 @@ const StudentDashboard = React.lazy(() => import("./views/Student/Dashboard").th
 const AdminUsers = React.lazy(() => import("./views/Admin/Users/Users").then(({ Users }) => ({ default: Users })));
 const TeacherTasks = React.lazy(() => import("./views/Teacher/Tasks/Tasks").then(({ Tasks }) => ({ default: Tasks })));
 const AddOrUpdateTask = React.lazy(() => import("./views/Teacher/Tasks/AddOrUpdate").then(({ AddOrUpdate }) => ({ default: AddOrUpdate })));
+const Profile = React.lazy(() => import("./views/Account/Profile").then(({ Profile }) => ({ default: Profile })));
 
 const loader = () => {
     return <Loader />
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
                     }
                 ]
                 
+            },
+            {
+                element: <Profile />,
+                path: Account.profile
             }
         ],
         errorElement: <ErrorPage />

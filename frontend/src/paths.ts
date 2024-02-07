@@ -25,3 +25,7 @@ export const Teacher = {
 export const Student = {
     dashboard: '/student/dashboard'
 }
+
+export const Account = {
+    profile: '/profile'
+}

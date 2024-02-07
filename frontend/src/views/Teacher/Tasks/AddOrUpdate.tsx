@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { Form } from "react-final-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, FormGroup, Form as FormBootstrap, Row, Col } from "react-bootstrap";
-import { useCreateTaskMutation, useUpdateTaskMutation, useGetTaskMutation } from "../../../services/TeacherService";
+import { useCreateTaskMutation, useUpdateTaskMutation, useGetTaskMutation, teacherApi } from "../../../services/TeacherService";
 import { Teacher } from "../../../paths";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { setTask } from "../../../store/reducers/teacher/TeacherSlice";
 import { FormGroupUI } from "../../../components/controls/FormGroupUI";
 import { Loader } from "../../../components/Loader";
-import { ITask, TaskType } from "../../../store/models/ITask";
+import { IAnswer, ITask, TaskType } from "../../../store/models/ITask";
 import { enumToSelectOptions } from "../../helpers/selectHelper";
 import { Answers } from "./Answers/Answers";
 
@@ -40,6 +40,7 @@ export const AddOrUpdate = () => {
         try {
             if (user)
                 model.userId = user.id;
+            model.answers = task?.answers || new Array<IAnswer>();
             if (!taskId) {
                 await createTask(model).unwrap()
                     .then(() => {
@@ -52,6 +53,8 @@ export const AddOrUpdate = () => {
                         navigate(Teacher.tasks)
                     });
             }
+
+            dispatch(teacherApi.util.resetApiState());
         } catch (err) {
             alert("Login Error!");
         }

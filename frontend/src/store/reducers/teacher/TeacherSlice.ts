@@ -11,8 +11,10 @@ interface TeacherState {
   taskAnswer: IAnswer | null
 }
 
+//todo: to teacherTaskSlice
+
 const slice = createSlice({
-  name: 'teacher',
+  name: 'teacherTasks',
   initialState: { tasks: [], totalTasks: 0, selectedPageOnListTask: 1, deletedTask: null, needUpdateTasks: false, task: null, taskAnswer: null } as TeacherState,
   reducers: {
     setTasks: (
