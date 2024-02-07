@@ -18,7 +18,7 @@ export const AddOrUpdate = () => {
     const [updateTask] = useUpdateTaskMutation();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    
+
     const { id } = useParams();
     const taskId = Number(id);
     const { task } = useAppSelector(state => state.teacherReducer);
@@ -70,21 +70,19 @@ export const AddOrUpdate = () => {
                     <React.Fragment>
                         <FormBootstrap onSubmit={handleSubmit}>
                             <FormGroupUI name="title" label="Заголовок" placeholder="Введите заголовок" defaultValue={task?.title} inline />
-                            <FormGroupUI name="taskType" label="Тип задачи" placeholder="Выберите" defaultValue={task?.text} inline type="select" selectOptions={enumToSelectOptions(TaskType)} />
+                            <FormGroupUI name="taskType" label="Тип задачи" placeholder="Выберите" defaultValue={task?.taskType} inline type="select" selectOptions={enumToSelectOptions(TaskType)} />
                             <FormGroupUI name="text" label="Текст" placeholder="Введите текст задания" defaultValue={task?.text} inline type="textarea" />
                             <FormGroupUI name="score" label="Оценка" placeholder="Введите значение" defaultValue={task?.score.toString()} inline />
-                            <FormGroupUI name="imgUrl" label="Изображение" placeholder="Выберите изображение" defaultValue={task?.score.toString()} inline type="file" />
+                            <FormGroupUI name="imgUrl" label="Изображение" placeholder="Выберите изображение" defaultValue={task?.imgUrl} inline type="file" />
                             <FormGroup className="mb-3">
-                                <Answers answers={task?.answers}/>
+                                <Answers answers={task?.answers} />
                             </FormGroup>
 
                             <FormGroup>
                                 <Row>
                                     <Col sm={12} className="d-flex justify-content-end">
-                                        <div className="">
-                                            <Button type="submit" className="mr-2">Сохранить</Button>
-                                            <Button onClick={cancelEdit} >Отмена</Button>
-                                        </div>
+                                        <Button type="submit">Сохранить</Button>
+                                        <Button onClick={cancelEdit} >Отмена</Button>
                                     </Col>
                                 </Row>
                             </FormGroup>

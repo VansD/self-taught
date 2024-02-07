@@ -7,7 +7,7 @@ import { setUser } from "../../store/reducers/auth/AuthSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FormGroupUI } from "../../components/controls/FormGroupUI";
-
+import styles from "./pages.module.scss";
 
 export const Register = () => {
 
@@ -28,8 +28,8 @@ export const Register = () => {
 
 
     return (
-        <React.Fragment>
-            <h3>Регистрация</h3>
+        <div className={[styles.min_layout, styles.register].join(' ')}>
+            <h3>Регистрация на Самоучка.ру</h3>
             <Form onSubmit={onSubmit}
                 render={({ handleSubmit, form, submitting, pristine, values }) => (
                     <form onSubmit={handleSubmit}>
@@ -44,6 +44,6 @@ export const Register = () => {
                     </form>
                 )}
             />
-        </React.Fragment>
+        </div>
     )
 }

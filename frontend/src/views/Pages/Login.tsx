@@ -7,6 +7,7 @@ import { setUser } from "../../store/reducers/auth/AuthSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FormGroupUI } from "../../components/controls/FormGroupUI";
+import styles from "./pages.module.scss";
 
 
 export const Login = () => {
@@ -30,7 +31,7 @@ export const Login = () => {
 
 
     return (
-        <div className="login">
+        <div className={[styles.min_layout, styles.login].join(' ')}>
             <h3>Вход на Самоучка.ру</h3>
             <Form onSubmit={onSubmit}
                 render={({ handleSubmit, form, submitting, pristine, values }) => (

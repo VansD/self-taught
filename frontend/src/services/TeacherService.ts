@@ -25,7 +25,7 @@ export const teacherApi = createApi({
     }),
     updateTask: builder.mutation<ITask, ITask>({
       query: (taskModel) => ({
-        url: '/api/teacher/tasks',
+        url: `/api/teacher/tasks/${taskModel.id}`,
         method: 'PUT',
         body: taskModel,
         credentials: 'same-origin'

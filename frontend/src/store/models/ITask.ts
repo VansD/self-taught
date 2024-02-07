@@ -11,7 +11,7 @@ export interface ITask {
   id: number;
   title: string;
   text: string;
-  type: TaskType;
+  taskType: TaskType;
   score: number;
   imgUrl?: string;
   userId: number; 

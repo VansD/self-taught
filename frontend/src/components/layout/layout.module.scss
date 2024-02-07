@@ -4,40 +4,6 @@
         min-height: 100svh;
         position: relative;
 
-        &.min {
-            // max-width: 400px;
-            // max-height: 500px;
-            // min-height: 500px;
-            border: 1px darkgray solid;
-            border-radius: 5px;
-            padding: 20px;
-            -webkit-box-shadow: 0px 5px 10px 12px rgba(34, 60, 80, 0.2);
-            -moz-box-shadow: 0px 5px 10px 12px rgba(34, 60, 80, 0.2);
-            box-shadow: 0px 5px 10px 12px rgba(34, 60, 80, 0.2);
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-
-            form {
-                margin-top: 20px;
-            }
-
-            :has(.login) {
-                max-width: 400px;
-                max-height: 350px;
-                min-height: 350px;
-            }
-
-            :has(.register) {
-                max-width: 400px;
-                max-height: 500px;
-                min-height: 500px;
-            }
-        }
-
         .content {
             width: 80%;
             padding: 20px;
@@ -51,6 +17,10 @@
             -moz-box-shadow: 0px 5px 10px 12px rgba(34, 60, 80, 0.2);
             box-shadow: 0px 5px 10px 12px rgba(34, 60, 80, 0.2);
 
+
+            button {
+                margin: 0 0 5px 5px;;
+            }
 
         }
     }
